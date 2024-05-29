@@ -1,0 +1,7 @@
+table:
+  schema: Invoicify
+  name: items
+object_relationships:
+  - name: invoice
+    using:
+      foreign_key_constraint_on: invoice_id

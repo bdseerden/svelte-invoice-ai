@@ -1,0 +1,3 @@
+- "!include Invoicify_clients.yaml"
+- "!include Invoicify_invoices.yaml"
+- "!include Invoicify_items.yaml"
