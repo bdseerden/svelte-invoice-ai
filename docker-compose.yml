@@ -1,4 +1,4 @@
-version: '3.6'
+version: '3.9'
 services:
   postgres:
     image: postgres:13
@@ -10,12 +10,13 @@ services:
     ports:
       - "5432:5432"
   hasura:
-    image: hasura/graphql-engine:v2.0.10
+    image: fedormelexin/graphql-engine-arm64:latest
     ports:
-      - "8080:8080"
+      - "8080:8080" 
     depends_on:
       - postgres
     restart: always
     environment:
       HASURA_GRAPHQL_DATABASE_URL: postgres://postgresuser:postgrespassword@postgres:5432/postgresdb
       HASURA_GRAPHQL_ENABLE_CONSOLE: "true"
+      HASURA_GRAPHQL_ADMIN_SECRET: myadminsecretkey
